@@ -48,3 +48,47 @@ args is a valid JSON array
 1 <= args.length <= 10
 20 <= t <= 1000
 10 <= cancelTimeMs <= 1000
+
+
+
+
+
+
+
+
+---------------------
+
+
+Important things to note:
+
+setTimeout() method:
+
+    - The function takes two parameters: a callback function and a delay value in milliseconds. The callback function represents the code we want to execute after the delay. 
+    - When we call setTimeout, it registers the callback function and starts a timer. After the delay we specified, the program adds the callback function to the event queue.
+    - Another side note:
+        - Event Queue: an event queue is a data structure that holds tasks to be processed by the JS runtime and when the call stack is empty (all the synchronous code has finished executing), the runtime picks the next task from the event queue and executes it.
+    - By using setTimeout, we introduce an asynchronous behaviour in the code, meaning that while the delay is counting down, the program is still executing the other code without waiting for the setTimeout callback to be invoked.
+
+
+Why clearTimeout() ?:
+
+    - Need clearTimeout to cancel the scheduled execution before the delay expires. setTimeout returns a unique identifier called a timeout ID
+    - clearTimeout is another built-in function that cancels a timeout previously set with setTimeout. By passing the timeout ID to clearTimeout, we prevent the execution of the callback function and stop the timer.
+
+Using clearTimeout in conjunction with setTimeout provides us with the ability to control the execution of a scheduled function. When we set a timeout using setTimeout, the function inside it will run after the specified delay. However, by using clearTimeout, we can cancel the scheduled function before it runs which is what we want here .
+
+In simpler terms, clearTimeout allows you to say, "Hey, hold on! Don't run that function yet!" It gives you the ability to pause or cancel the scheduled execution, providing a smoother and more responsive user experience in situations where dynamic control is required.
+
+
+
+Approach
+```s
+The code defines a function named "cancellable" that takes three parameters: "fn" (a function), "args" (an array of arguments), and "t" (a time delay in milliseconds).
+Inside the "cancellable" function, a nested function named "cancelFn" is defined. This function is responsible for canceling the execution of the scheduled function.
+The "cancelFn" function calls clearTimeout with the timer identifier to cancel the scheduled function execution.
+The setTimeout function is used to schedule the execution of a function, which is passed as the first parameter, after the specified time delay (t).
+The setTimeout function returns a timer identifier, which is stored in the "timer" variable.
+The scheduled function (fn) is executed using the spread operator (...args) to pass the arguments array to the function.
+Finally, the "cancelFn" function is returned from the "cancellable" function, allowing you to call it later to cancel the scheduled function if needed.
+```
+

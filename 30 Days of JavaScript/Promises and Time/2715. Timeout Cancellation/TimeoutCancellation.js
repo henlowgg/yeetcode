@@ -4,9 +4,25 @@
  * @param {number} t
  * @return {Function}
  */
-var cancellable = function(fn, args, t) {
-    
-};
+// let cancellable = function(fn, args, t) {
+//     let clearTime = function () {
+//         clearTimeout(timer);
+//     };
+//     let timer = setTimeout(() => {
+//         fn(...args)
+//     }, t);
+//     return clearTime;
+// };
+
+// or 
+
+let cancellable = function(fn, args, t) {
+    let timer = setTimeout(fn, t, ...args);
+    let cancelTime = () => {
+        clearTimeout(timer);
+    }
+    return cancelTime;
+}
 
 /**
  *  const result = [];
