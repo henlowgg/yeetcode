@@ -22,3 +22,15 @@ var buyChoco = function(prices, money) {
         return money;
     }
 };
+
+// assume min cost to be infinite
+// init num of chocolates 
+// check every pair of chocolates
+// sum price of first two chocolates
+// if sum less than min cost, update min cost
+
+// buy chocolates if theres enough money
+// return amount of money left
+// cannot buy chocolates so return initial amount of money
+
+// O(n2) time complexity with O(1) mem complexity
