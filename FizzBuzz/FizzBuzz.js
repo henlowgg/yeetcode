@@ -43,3 +43,49 @@ var fizzyBuzz = function(n) {
     }
     return arr
 };
+
+
+var fizzyFizzy = function(n) {
+    let arr = []
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0)
+        arr.push("FizzBuzz")
+        else if (i % 3 === 0)
+        arr.push("Fizz")
+        else if (i % 5 === 0)
+        arr.push("Buzz")
+        else
+        arr.push(i + "")
+    }
+    return arr;
+}
+
+var frizzyBuzz = function(n) {
+    let fizzyArr = []
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0)
+            fizzyArr.push("FizzBuzz")
+        else if (i % 3 === 0)
+            fizzyArr.push("Fizz")
+        else if (i % 5 === 0)
+            fizzyArr.push("Buzz")
+        else
+            fizzyArr.push(i + "")
+    }
+    return fizzyArr;
+}
+
+const fwizBwuz = (n) => {
+    let fwiz = [];
+
+    for (let i = 1; i <= n; i++) {
+        let fwizzyResult = "";
+
+        if (i % 3 === 0) fwizzyResult += "Fizz";
+        if (i % 5 === 0) fwizzyResult += "Buzz";
+
+        if (fwizzyResult === "") fwizzyResult += i;
+        fwiz.push(fwizzyResult);
+    }
+    return fwiz;
+}
