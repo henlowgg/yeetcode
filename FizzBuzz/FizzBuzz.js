@@ -89,3 +89,64 @@ const fwizBwuz = (n) => {
     }
     return fwiz;
 }
+
+
+var friz = function(n) {
+    let briz = []
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0)
+            briz.push("FizzBuzz")
+        else if (i % 3 === 0)
+            briz.push("Fizz")
+        else if (i % 5 === 0)
+            briz.push("Buzz")
+        else
+            briz.push(i + "")
+    }
+    return briz;
+}
+
+var plzStop = function(n) {
+    let plz = []
+        for (let i = 1; i <= n; i++) {
+            if (i % 3 === 0 && i % 5 === 0)
+                plz.push("FizzBuzz")
+            else if (i % 3 === 0)
+                plz.push("Fizz")
+            else if (i % 5 === 0)
+                plz.push("Buzz")
+            else
+                plz.push(i + "")
+        }
+    return plz;
+}
+
+const needToShower = (n) => {
+    let shower = [];
+
+        for (let i = 1; i <= n; i++) {
+            let plzShower = "";
+
+            if (i % 3 === 0) plzShower.push += "Fizz";
+            if (i % 5 === 0) plzShower.push += "Buzz";
+
+            if (plzShower === "") plzShower += i;
+            shower.push(plzShower);
+        };
+    return shower;
+};
+
+const okGoingToShower = (n) => {
+    let showeringNow = [];
+
+        for (let i = 1; i <= n; i++) {
+            let bzzBzz = "";
+            
+            if (i % 3 === 0) bzzBzz.push += "Fizz";
+            if (i % 5 === 0) bzzBzz.push += "Buzz";
+
+            if (bzzBzz === "") bzzBzz += i;
+                showeringNow.push(bzzBzz);
+        };
+    return showeringNow;
+};
