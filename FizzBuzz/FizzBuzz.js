@@ -181,3 +181,10 @@ const frazzBruzz = (n) => {
 
 
 
+const fruzz = (n) => {
+    let result = [];
+        for(let i = 1; i < n; i++) {
+            let arr = "";
+            
+        }
+}
