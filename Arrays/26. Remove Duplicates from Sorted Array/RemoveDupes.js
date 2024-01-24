@@ -15,3 +15,5 @@ var removeDuplicates = function(nums) {
     }
     return j + 1;
 };
+
+// green check box on github lmao
